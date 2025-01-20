@@ -65,12 +65,15 @@ const Employees = () => {
 
   const handleContinue = () => {
     setShowLoader(true);
+    setTimeout(() => {
+      setShowLoader(false);
+    }, 500);
     setIsPopUpOpen(false);
   };
 
   return (
     <div>
-      <div className="w-full h-[95px] text-2xl font-semibold px-8 py-8 mt-0 bg-pink-50 content-center flex justify-between">
+      <div className="w-[100%] text-2xl font-semibold px-8 py-8 mt-0 bg-pink-50 content-center flex justify-between">
         Employees
         <button className="bg-teal-500 w-auto px-2 h-10 text-lg flex items-center border border-teal-600 shadow-sm rounded-lg text-white ">
           <GoPersonAdd className="m-1" />
@@ -79,9 +82,9 @@ const Employees = () => {
       </div>
       {!showLoader ? (
         <div className={isPopUpOpen && "blur"}>
-          <div className="w-[1123px] h-[500px] my-10 mx-8 bg-gray-200 flex justify-center">
+          <div className="w-[95%] h-[100%] my-[3.5%] mx-8 flex justify-center rounded-2xl border border-gray-500">
             <div>
-              <div className="flex justify-center">
+              <div className="w-[80%] h-[55%] flex justify-center">
                 <img
                   src="https://s3-alpha-sig.figma.com/img/4c66/8749/aa0e15279d2fc3e50cd0fe1ed81c0636?Expires=1737936000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=VgOQCS2cuX1Rn9twSpTSZsKoM46fKCVlFeEemyizC6XFEw6N9pnqf5Gf9h03NsOtEIhcEydn841T5jjnSzaIFTzLH9SNv09kwufhELPiJRtKveCp~qzOsXUAU~NueWR5l8r8XfQ7daTPtwcKdQZmXAHyY4PkJrj9MKUzdqgrl5p2uhy8vn32qRY9rWfYMe3KuzNQZJ0VRwpV0nrS2UI~zkCtBO1KTzW8snHg3uIVMroaksny1xF2mZHDU9W5GqC3eDtwYIiuJDLJ95AzpQaWg0AuAgLg5tttdkjT~XVWv8eXrkLuk~koR8W9QErGiRHgr0RyfZyoDBV3aWcJ7G6D~w__"
                   alt=""
@@ -91,7 +94,7 @@ const Employees = () => {
                 <p>Start building your team</p>
                 <p>Add your first team member or import your entire team</p>
               </div>
-              <div className="flex justify-center space-x-4">
+              <div className="flex justify-center space-x-4 mt-5">
                 <button
                   className="bg-gray-100 p-1 rounded-md flex border border-gray-500"
                   onClick={openPopUp}>
@@ -107,14 +110,14 @@ const Employees = () => {
           </div>
         </div>
       ) : (
-        <div className="flex justify-center items-center h-screen">
+        <div className="flex justify-center items-center h-[100%]">
           <div className="border-t-4 border-green-600 border-solid rounded-full h-16 w-16 animate-spin"></div>
         </div>
       )}
 
       {isPopUpOpen && (
-        <div className="w-[600px] h-[560px] bg-white -m-[520px] ml-[270px] absolute rounded-2xl shadow-lg">
-          <div className="flex justify-between mx-5 my-10">
+        <div className="w-[40%] h-[80%] bg-white -m-[520px] ml-[270px] absolute rounded-2xl shadow-lg">
+          <div className="flex justify-between mx-5 my-2">
             <p className="font-bold text-xl">Upload File</p>
             <GoX className="w-10 h-6" onClick={closePopUp} />
           </div>

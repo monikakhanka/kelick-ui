@@ -4,8 +4,8 @@ import { BiHome } from "react-icons/bi";
 import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
-    <div className="w-[256px] h-[900px]  bg-orange-300 flex flex-col justify-between ">
-      <div className="w-[220px] h-[529px] bg-yellow-50 m-4">
+    <div className="w-[256px] h-[100%]  bg-orange-300 flex flex-col justify-between ">
+      <div className="w-[220px] h-[60%] bg-yellow-50 m-4">
         <img src={logo} alt="logo" className="h-[26px] w-[105px] ml-4 my-2" />
         <div className="flex">
           <BiHome className="w-10 ml-4 m-1" />
